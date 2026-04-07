@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.page {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg1,
+.bg2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.bg1 {
+  background: #3b82f6;
+  top: -150px;
+  left: -150px;
+}
+
+.bg2 {
+  background: #9333ea;
+  bottom: -150px;
+  right: -150px;
+}
+
+.card {
+  width: 380px;
+  padding: 30px;
+  border-radius: 12px;
+  background: #1e293b;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.card input[type="text"],
+.card input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #334155;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card input::placeholder {
+  color: #aaa;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card button:hover {
+  background: #1d4ed8;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.otp-display {
+  margin: 15px 0;
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #facc15;
+  font-weight: bold;
+  min-height: 30px;
+}
+
+.otp-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.otp-box input {
+  width: 45px;
+  height: 50px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: #475569;
+  color: white;
+}
+
+.result {
+  margin-top: 12px;
+  font-weight: bold;
+  min-height: 20px;
+}
+
+.result.success {
+  color: #22c55e;
+}
+
+.result.error {
+  color: #ef4444;
 }
